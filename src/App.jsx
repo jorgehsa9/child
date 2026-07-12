@@ -6,10 +6,19 @@ import ShapeMatch from './games/ShapeMatch/ShapeMatch';
 import MemoryMatch from './games/MemoryMatch/MemoryMatch';
 import ColorSorting from './games/ColorSorting/ColorSorting';
 import FeedMonster from './games/FeedMonster/FeedMonster';
+import ScratchReveal from './games/ScratchReveal/ScratchReveal';
 import packageInfo from '../package.json';
 
 const CATEGORIES = [
-  { id: 'motor', title: 'Coordenação Motora 👐', className: 'cat-motor', games: [{ id: 'balloon', title: 'Pop Pop!', icon: '🎈' }] },
+  { 
+    id: 'motor', 
+    title: 'Coordenação Motora 👐', 
+    className: 'cat-motor', 
+    games: [
+      { id: 'balloon', title: 'Pop Pop!', icon: '🎈' },
+      { id: 'scratch', title: 'Gelo', icon: '❄️' }
+    ] 
+  },
   { id: 'shapes', title: 'Formas 🔶', className: 'cat-shapes', games: [{ id: 'shape', title: 'Shapes', icon: '⭐' }] },
   { id: 'colors', title: 'Cores 🎨', className: 'cat-colors', games: [{ id: 'color', title: 'Separador', icon: '🍎' }] },
   { id: 'numbers', title: 'Números 🔢', className: 'cat-numbers', games: [{ id: 'monster', title: 'Monstro', icon: '👾' }] },
@@ -33,6 +42,8 @@ function App() {
         return <ColorSorting onBack={() => setCurrentGame(null)} />;
       case 'monster':
         return <FeedMonster onBack={() => setCurrentGame(null)} />;
+      case 'scratch':
+        return <ScratchReveal onBack={() => setCurrentGame(null)} />;
       default:
         return null;
     }
