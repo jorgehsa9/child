@@ -3,14 +3,14 @@ import './App.css';
 import { Play } from 'lucide-react';
 import BalloonPop from './games/BalloonPop/BalloonPop';
 import ShapeMatch from './games/ShapeMatch/ShapeMatch';
-import packageInfo from '../package.json';
-
 import MemoryMatch from './games/MemoryMatch/MemoryMatch';
+import ColorSorting from './games/ColorSorting/ColorSorting';
+import packageInfo from '../package.json';
 
 const CATEGORIES = [
   { id: 'motor', title: 'Coordenação Motora 👐', className: 'cat-motor', games: [{ id: 'balloon', title: 'Pop Pop!', icon: '🎈' }] },
   { id: 'shapes', title: 'Formas 🔶', className: 'cat-shapes', games: [{ id: 'shape', title: 'Shapes', icon: '⭐' }] },
-  { id: 'colors', title: 'Cores 🎨', className: 'cat-colors', games: [] },
+  { id: 'colors', title: 'Cores 🎨', className: 'cat-colors', games: [{ id: 'color', title: 'Separador', icon: '🍎' }] },
   { id: 'numbers', title: 'Números 🔢', className: 'cat-numbers', games: [] },
   { id: 'letters', title: 'Letras 🔤', className: 'cat-letters', games: [] },
   { id: 'logic', title: 'Lógica 🧩', className: 'cat-logic', games: [{ id: 'memory', title: 'Memory', icon: '🧩' }] },
@@ -28,6 +28,8 @@ function App() {
         return <ShapeMatch onBack={() => setCurrentGame(null)} />;
       case 'memory':
         return <MemoryMatch onBack={() => setCurrentGame(null)} />;
+      case 'color':
+        return <ColorSorting onBack={() => setCurrentGame(null)} />;
       default:
         return null;
     }
