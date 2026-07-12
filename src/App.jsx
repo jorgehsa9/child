@@ -3,6 +3,7 @@ import './App.css';
 import { Play } from 'lucide-react';
 import BalloonPop from './games/BalloonPop/BalloonPop';
 import ShapeMatch from './games/ShapeMatch/ShapeMatch';
+import packageInfo from '../package.json';
 
 function App() {
   const [currentGame, setCurrentGame] = useState(null);
@@ -41,6 +42,7 @@ function App() {
           </div>
         </div>
       </div>
+      <div className="app-version">v{packageInfo.version}</div>
     </div>
   );
 }
