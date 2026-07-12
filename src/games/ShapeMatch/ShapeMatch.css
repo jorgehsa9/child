@@ -13,14 +13,16 @@
 
 .targets-container {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   margin-top: 5rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .target-hole {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +32,8 @@
 }
 
 .shape {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.1s;
 }
@@ -44,9 +46,9 @@
   width: 0;
   height: 0;
   background-color: transparent !important;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid; /* color set in JS */
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 70px solid; /* color set in JS */
   box-shadow: none;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
@@ -57,20 +59,41 @@
 
 .draggables-container {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   margin-bottom: 3rem;
-  min-height: 150px;
+  min-height: 120px;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .draggable-wrapper {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: grab;
   touch-action: none;
+}
+
+@media (min-width: 768px) {
+  .targets-container, .draggables-container {
+    gap: 3rem;
+  }
+  .target-hole, .draggable-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  .shape {
+    width: 100px;
+    height: 100px;
+  }
+  .shape.triangle {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+  }
 }
 
 .draggable-wrapper:active {
