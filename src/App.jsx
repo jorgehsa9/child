@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="home-menu">
-        <h1 className="app-logo">Bebi Games</h1>
+        <h1 className="app-logo">Pop Balão</h1>
         <div className="games-grid">
           <div className="game-card" onClick={() => setCurrentGame('balloon')}>
             <div className="game-icon">🎈</div>
