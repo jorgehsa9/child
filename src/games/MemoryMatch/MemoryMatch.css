@@ -1,0 +1,105 @@
+.memory-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #e0f7fa 0%, #b2ebf2 100%);
+  position: relative;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.memory-card {
+  width: 120px;
+  height: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg) scale(0.95);
+  opacity: 0.8;
+}
+
+.memory-card-front, .memory-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #fff;
+}
+
+.memory-card-front {
+  background: #ff6b6b;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
+}
+
+.memory-card-front::after {
+  content: '?';
+  font-size: 4rem;
+  color: white;
+  font-weight: 900;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.memory-card-back {
+  background: white;
+  transform: rotateY(180deg);
+  overflow: hidden;
+}
+
+.memory-card-back img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.victory-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem 4rem;
+  border-radius: 40px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #4ecdc4;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  border: 10px solid #ffe66d;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+@keyframes popIn {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
