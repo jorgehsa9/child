@@ -1,9 +1,11 @@
 .app-container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .home-menu {
@@ -12,21 +14,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: radial-gradient(circle at center, #fffde7 0%, #ffecb3 100%);
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at top center, #fffde7 0%, #ffecb3 100%);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  scroll-snap-align: start;
+}
+
+.logo-image {
+  width: 120px;
+  height: 120px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
 }
 
 .app-logo {
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 900;
   color: #ff6b6b;
-  text-shadow: 4px 4px 0px #ffe66d, 8px 8px 0px #4ecdc4;
-  margin-bottom: 3rem;
+  text-shadow: 3px 3px 0px #ffe66d, 6px 6px 0px #4ecdc4;
+  margin-top: -10px;
+  margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: float 3s ease-in-out infinite;
+  letter-spacing: 1px;
   text-align: center;
+  font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
 }
 
 @keyframes float {
@@ -37,15 +56,17 @@
 
 .games-grid {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 4rem;
 }
 
 .game-card {
-  width: 260px;
-  height: 260px;
+  width: 90%;
+  max-width: 350px;
+  height: 220px;
   border-radius: 40px;
   background: white;
   display: flex;
@@ -60,6 +81,7 @@
   color: #333;
   position: relative;
   overflow: hidden;
+  scroll-snap-align: center;
 }
 
 .game-card::after {

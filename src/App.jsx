@@ -34,7 +34,10 @@ function App() {
   return (
     <div className="app-container">
       <div className="home-menu">
-        <h1 className="app-logo">Pop Balão</h1>
+        <div className="logo-container">
+          <img src="/icon-192x192.png" alt="Pop Balão Logo" className="logo-image" />
+          <h1 className="app-logo">Pop Balão</h1>
+        </div>
         <div className="games-grid">
           <div className="game-card" onClick={() => setCurrentGame('balloon')}>
             <div className="game-icon">🎈</div>
