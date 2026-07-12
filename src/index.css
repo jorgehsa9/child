@@ -1,0 +1,68 @@
+:root {
+  --color-bg: #fffde7;
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-tertiary: #FFE66D;
+  --color-text: #1A535C;
+  
+  --font-family: 'Fredoka One', 'Nunito', 'Comic Sans MS', sans-serif;
+  
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden; /* Prevent scrolling in baby games to keep focus */
+  user-select: none; /* Prevent text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  touch-action: none; /* Prevent pinch zoom etc */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global utility classes */
+.btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-family: var(--font-family);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn:active {
+  transform: scale(0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: 4rem;
+  color: var(--color-primary);
+  text-shadow: 3px 3px 0px var(--color-tertiary), 5px 5px 0px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
